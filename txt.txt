@@ -1,0 +1,29 @@
+CF (até 15/12/2021):
+- Período de graça: 
+  • início: julho do ano da expedição
+  • fim: dezembro do ano seguinte
+
+EC 114 (16/12/2021 até 09/09/2025):
+- Período de graça:
+  • início: abril do ano da expedição
+  • fim: dezembro do ano seguinte
+
+EC 136 (a partir de 10/09/2025):
+- Período de graça:
+  • início: fevereiro do ano da expedição
+  • fim: dezembro do ano seguinte
+
+
+
+
+O que o código irá receber: 
+
+- data_base_valor_homologado  → início da correção
+- data_oficio_requisitorio    → define o regime + período de graça
+
+
+
+O que levar em consideração: 
+
+- data_final_calculo          → até quando calcular (ex: hoje)
+- taxa_juros_anual            → ex: 2% a.a simples

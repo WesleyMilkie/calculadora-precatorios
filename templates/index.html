@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recall Recuperação Tributária | Calculadora de Precatórios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👑 RECALL RECUPERAÇÃO TRIBUTÁRIA</h1>
+            <p class="subtitle">Sistema Premium de Cálculo de Precatórios | Precisão Jurídica e Tecnologia</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Formulário de Entrada -->
+            <div class="card">
+                <h2>📌 Dados do Precatório</h2>
+                <form id="calculadoraForm">
+                    <div class="form-group">
+                        <label for="valor_homologado">Valor Homologado (R$)</label>
+                        <input type="number" id="valor_homologado" name="valor_homologado" 
+                               step="0.01" min="0" value="100000.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data_base">Data-base (Homologação/Trânsito em Julgado)</label>
+                        <input type="date" id="data_base" name="data_base" 
+                               value="2021-05-10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data_oficio">Data do Ofício Requisitório</label>
+                        <input type="date" id="data_oficio" name="data_oficio" 
+                               value="2022-03-20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="data_final">Data Final do Cálculo</label>
+                        <input type="date" id="data_final" name="data_final" 
+                               value="2026-01-29" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="taxa_correcao">Taxa de Correção (% a.a.)</label>
+                            <input type="number" id="taxa_correcao" name="taxa_correcao" 
+                                   step="0.01" min="0" value="1.0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taxa_mora">Taxa de Mora (% a.a.)</label>
+                            <input type="number" id="taxa_mora" name="taxa_mora" 
+                                   step="0.01" min="0" value="0.5" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-calcular">
+                        🧮 Calcular Precatório
+                    </button>
+                </form>
+            </div>
+
+            <!-- Área de Resultados -->
+            <div id="resultadoArea" class="resultado-area" style="display: none;">
+                <!-- Dados de Entrada Usados -->
+                <div class="card">
+                    <h2>📊 Dados Utilizados no Cálculo</h2>
+                    <div id="dadosEntrada"></div>
+                </div>
+
+                <!-- Regime Constitucional -->
+                <div class="card regime-card">
+                    <h2>⚖️ Regime Constitucional</h2>
+                    <div id="regimeInfo"></div>
+                </div>
+
+                <!-- Períodos de Cálculo -->
+                <div class="card">
+                    <h2>📅 Períodos de Cálculo</h2>
+                    <div id="periodosCalculo"></div>
+                </div>
+
+                <!-- Resultado Final -->
+                <div class="card resultado-final">
+                    <h2>💰 Resultado Final</h2>
+                    <div id="resultadoFinal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
