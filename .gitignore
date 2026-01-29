@@ -48,3 +48,6 @@ instance/
 
 # Logs
 *.log
+
+# Docker
+.dockerignore

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  calculadora-precatorios:
+    build: .
+    container_name: calculadora-precatorios
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=web_app.py
+      - FLASK_ENV=production
+    volumes:
+      - .:/app
+    restart: unless-stopped
